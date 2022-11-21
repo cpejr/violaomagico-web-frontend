@@ -76,8 +76,25 @@ export const ContainerOutsideDots = styled.div`
   border-width: 4px;
   border-top: 0px;
   border-left: 0;
-  margin-left: 78px;
+  
 
+`;
+
+export const StylesAdd = styled.div`
+  display: flex;
+  width: 75px;
+  height: 36px;
+  margin-bottom: 2%;
+  background-color: #F5EDE6;
+  border-style:solid;
+  border-width: 4px;
+  border-top: 0px;
+  border-right: 0;
+`;
+
+export const StylesBar = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
   
 

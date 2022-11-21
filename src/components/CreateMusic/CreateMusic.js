@@ -8,7 +8,9 @@ import {
     BotaoNovaBatida,
     Line,
     OutsideDots,
-    ContainerOutsideDots
+    ContainerOutsideDots,
+    StylesAdd,
+    StylesBar
   } from "./Styles";
 import OutsideDot from "../OutsideDot/OutsideDot";
 import Dots from "../Dots/Dots";
@@ -191,6 +193,8 @@ function CreateMusic() {
                         </Fret>
                     </GuitarFrets>
                 </GuitarNeck>
+                <StylesBar>
+                <StylesAdd/>
                 <ContainerOutsideDots>
                     <OutsideDots>
                         <OutsideDot setChord={setChord} chord={chord} position={0}/>
@@ -217,6 +221,7 @@ function CreateMusic() {
                         <OutsideDot setChord={setChord} chord={chord} position={15}/>
                     </OutsideDots>
                 </ContainerOutsideDots>
+                </StylesBar>
                 <BotaoNovaBatida onClick={() => console.log(chord)}>NOVA LINHA</BotaoNovaBatida>
             </>
         );
