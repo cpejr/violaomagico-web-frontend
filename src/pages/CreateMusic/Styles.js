@@ -133,7 +133,7 @@ export const Title = styled.div`
   @media (max-width: 360px){
     font-size: 18px;
   }
-  `;
+`;
 
 export const BpmSelector = styled.select`
 
