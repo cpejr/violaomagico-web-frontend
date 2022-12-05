@@ -21,6 +21,27 @@ export const BotaoNovaBatida = styled.button`
 
 `;
 
+export const BotaoEncerrar = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border-width: 1px;
+  margin-bottom: 1.5%;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  height: 44px;
+  width: 139px;
+  border-radius: 9px;
+  padding: 10px 15px 10px 15px;
+
+`;
+
 export const Container = styled.div`
   display: flex;
   align-items: center;

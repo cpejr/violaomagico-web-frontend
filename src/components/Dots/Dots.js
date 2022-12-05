@@ -1,29 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     Dot,
   } from "./Styles";
 
 function Dots({setChord, chord, position, note}) {
 
-    let auxChord = chord;
-
-    const [ rerender, setRerender ] = useState(true);
-
-
     function handleDotChange() {
+        const auxChord = [...chord];
+
         if (!auxChord[position][note]) {
-            auxChord[position][note] = true;
-            setChord(auxChord);
+            auxChord[position]={...auxChord[position],[note]: true};
+
         }
         else if (auxChord[position][note]) {
-            auxChord[position][note] = false;
-            setChord(auxChord);
+            auxChord[position]={...auxChord[position],[note]: false};
+
         }
-        setRerender(!rerender);
+    setChord(auxChord);
     }
 
     return(
-        <Dot onClick={handleDotChange} state={auxChord[position][note]}/>
+        <Dot onClick={handleDotChange} state={chord[position][note]}/>
     )
 }
 

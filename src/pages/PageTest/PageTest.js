@@ -3,21 +3,33 @@ import CreateMusic from "../../components/CreateMusic/CreateMusic";
 import {
     BotaoNovaBatida,
     Container,
+    BotaoEncerrar
   } from "./Styles";
+import { defaultChord } from "../../utils/ChordUtils";
+import { saveAs } from "file-saver";
 
 function Test() {
 
-    const [ createMusic, setCreateMusic ] = useState([<CreateMusic key={0} />]);
+    const [ music, setMusic ] = useState([defaultChord])
 
     let handleAddComponent = (e) => {
         e.preventDefault()
-        setCreateMusic([...createMusic,<CreateMusic key={createMusic.length} />]);
+        setMusic([...music,defaultChord])
     }
+
+    var content = "X(BPM escolhido)\n 1<\ns\nd\nd\ns\nBGDA\n \n \neBG\n>";
+    var filename = "music.txt";
+
+    var blob = new Blob([content], {
+    type: "text/plain;charset=utf-8"
+    });
+
 
     return (
         <Container>
-           {createMusic}
+           {music.map((currentMusic, index) => <CreateMusic key={index} musicData={currentMusic}/>)}
            <BotaoNovaBatida onClick={handleAddComponent}>NOVA LINHA</BotaoNovaBatida>
+           <BotaoEncerrar onClick={() => {saveAs(blob, filename)}}>ENCERRAR</BotaoEncerrar>
         </Container>
     );
 }

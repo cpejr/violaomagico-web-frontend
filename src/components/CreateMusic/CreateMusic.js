@@ -1,32 +1,20 @@
 import React, { useState } from "react";
-import {
-    GuitarNeck,
-    GuitarStrings,
-    String,
-    GuitarFrets,
-    Fret,
-    BotaoNovaBatida,
-    Line,
-    OutsideDots,
-    ContainerOutsideDots,
-    StylesAdd,
-    StylesBar
-  } from "./Styles";
-import OutsideDot from "../OutsideDot/OutsideDot";
 import Dots from "../Dots/Dots";
-import { defaultChord } from "../../utils/ChordUtils";
+import OutsideDot from "../OutsideDot/OutsideDot";
+import {
+    ContainerOutsideDots, Fret, GuitarFrets, GuitarNeck,
+    GuitarStrings, Line,
+    OutsideDots, String, StylesAdd,
+    StylesBar,
+} from "./Styles";
 
 
-function CreateMusic() {
+function CreateMusic({musicData}) {
 
-    const [ chord, setChord ] = useState(defaultChord);
+    const [ chord, setChord ] = useState(musicData);
 
-    // const [ rerender, setRerender ] = useState(true);
 
-    // useEffect(() => {
-    //     setRerender(!rerender);
-    // },[rerender]);
-
+    
         return(
             <>
                 <GuitarNeck>
@@ -222,7 +210,7 @@ function CreateMusic() {
                     </OutsideDots>
                 </ContainerOutsideDots>
                 </StylesBar>
-                <BotaoNovaBatida onClick={() => console.log(chord)}>NOVA LINHA</BotaoNovaBatida>
+                {/* <BotaoNovaBatida onClick={() => console.log(chord)}>NOVA LINHA</BotaoNovaBatida> */}
             </>
         );
 }
